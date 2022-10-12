@@ -1,0 +1,11 @@
+{
+  "name": "tutoangular",
+  "version": "1.0.0",
+  "description": "tuto angular",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "didy m",
+  "license": "ISC"
+}
