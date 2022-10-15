@@ -1,0 +1,76 @@
+<div class="container">
+
+    <h3>S'inscrire</h3>
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <mat-form-field apparence="fill" class="email">
+            <mat-label>Email</mat-label>
+            <input matInput data-cy="email" type="email" placeholder="xyz@gmail.com" formControlName="email">
+
+
+            <mat-error data-cy="errorEmail" *ngIf="registerForm.controls['email'].hasError('email')">
+                Email invalide
+            </mat-error>
+            <mat-error *ngIf="registerForm.controls['email'].hasError('required')">
+                L'Email est <strong>requis</strong>
+            </mat-error>
+
+
+        </mat-form-field>
+        <mat-form-field apparence="fill" class="password" hintLabel="min 5 caractères">
+            <mat-label>Password</mat-label>
+            <input matInput data-cy="password" placeholder="Enter password" type="password" formControlName="password">
+
+
+            <mat-error data-cy="errorPassword" *ngIf="registerForm.controls['password'].hasError('pattern')">
+                Password invalide
+            </mat-error>
+            <mat-error *ngIf="registerForm.controls['password'].hasError('required')">
+                Le password est <strong>requis</strong>
+            </mat-error>
+
+
+        </mat-form-field>
+
+        <mat-divider></mat-divider><br>
+        <div formArrayName="alladresse">
+            <div *ngFor="let item of alladresse.controls; let i=index">
+                <h3>Adresse N°{{i}}</h3>
+                <div [formGroupName]="i" class="addadresse">
+                    <mat-form-field apparence="fill" class="adresse">
+                        <mat-label>Adresse</mat-label>
+                        <input matInput data-cy="adresse" placeholder="Enter adresse" type="text"
+                            formControlName="adresse">
+                    </mat-form-field>
+                    <mat-form-field apparence="fill" class="ville">
+                        <mat-label>Ville</mat-label>
+                        <input matInput data-cy="ville" placeholder="Enter ville" type="text" formControlName="ville">
+                    </mat-form-field>
+                    <mat-form-field apparence="fill" class="etat">
+                        <mat-label>Etat</mat-label>
+                        <input matInput data-cy="etat" placeholder="Enter etat" type="text" formControlName="etat">
+                    </mat-form-field>
+                    <mat-form-field apparence="fill" class="zip">
+                        <mat-label>Zip</mat-label>
+                        <input matInput data-cy="zip" placeholder="Enter zip" type="text" formControlName="zip">
+                    </mat-form-field>
+
+                    <button mat-button data-cy="removerow" class="removeAdresse" (click)="removeRow(i)">
+                        <mat-icon>delete_circle</mat-icon>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <a data-cy="addnewrow"  (click)="AddNewRow()">
+            <mat-icon>add_circle</mat-icon>
+        </a>
+
+
+        <br>
+        <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid"
+            data-cy="submit">Enregistrer</button>
+        <button mat-raised-button color="accent" type="reset">Reset</button>
+
+
+    </form>
+</div>

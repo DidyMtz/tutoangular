@@ -1,0 +1,21 @@
+<div class="container">
+    <h3>Login Form</h3>
+    <form [formGroup]="loginform" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill" class="email">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" data-cy="email" placeholder="xyz@gmail.com" formControlName="email">
+            <!--  <mat-error [ngClass]="{'text-alert':messageEmail}" data-cy="messageErrorEmail">{{messageEmail}}</mat-error>-->
+            <mat-error data-cy="messageErrorEmail" *ngIf="loginform.controls['email'].invalid">
+                {{getErrorEmailMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field hintLabel="Min 5 caractères" apparence="fill" class="password">
+            <input matInput data-cy="password" type="password" placeholder="Enter password" formControlName="password">
+            <!-- <mat-error [ngClass]="{'text-alert  ':messageEmail}" data-cy="messageErrorpassword">{{messagePassword}}</mat-error>-->
+            <mat-error data-cy="messagErrorPassword" *ngIf="loginform.controls['email'].invalid">
+                {{getErrorPasswordMessage()}}</mat-error>
+        </mat-form-field>
+        <br> <button mat-raised-button color="primary" type="submit" [disabled]="loginform.invalid"
+            data-cy="submit">Soumettre</button>
+        <button mat-raised-button color="accent" type="reset">Reset</button>
+    </form>
+</div>
