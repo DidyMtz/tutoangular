@@ -1,4 +1,8 @@
+import Login from '../pageObject/login'
+
 describe("Inscription", () => {
+  const login = new Login();
+
   before(() => {
     cy.SignIn();
   });
@@ -10,17 +14,17 @@ describe("Inscription", () => {
   it("check register form with wrong data", () => {
     cy.get("h3").contains("S'inscrire");
     cy.get("form").within(($form) => {
-      cy.get('[data-cy="email"]')
+      login.email()
         .type("fgv.com")
         .should("have.value", "fgv.com");
-      cy.get('[data-cy="password"]').type("dd-@").should("have.value", "dd-@");
+      login.password().type("dd-@").should("have.value", "dd-@");
       cy.get('[data-cy="errorEmail"]').contains("Email invalide");
-      cy.get('[data-cy="email"]')
+      login.email()
         .clear()
         .type("fake@gmail.com")
         .should("have.value", "fake@gmail.com");
       cy.get('[data-cy="errorPassword"]').contains("Password invalide");
-      cy.get('[data-cy="password"]')
+      login.password()
         .clear()
         .type("dddddddds")
         .should("have.value", "dddddddds");

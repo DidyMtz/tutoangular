@@ -1,0 +1,44 @@
+{"posts" : [{  
+    "id": 1,  
+    "title": "AngularJS (1.0.0)",  
+    "price": 100,
+    "releaseDate": "June 14th, 2012",
+    "color" : "red" 
+}, {  
+    "id": 2,  
+    "title": "Angular 2",  
+    "price": 300,
+    "releaseDate": "September 14, 2016" ,
+    "color" : "blue"
+}, {  
+    "id": 3,  
+    "title": "Angular 4", 
+    "price": 600, 
+    "releaseDate": "March 23, 2017",
+    "color" : "yellow"
+}, {  
+    "id": 4,  
+    "title": "Angular 5",  
+    "price": 1200,
+    "releaseDate": "November 1, 2017",
+    "color" : "green"  
+}, {  
+    "id": 5,  
+    "title": "Angular 6",  
+    "price": 1600,
+    "releaseDate": "May 4th, 2018" ,
+    "color" : "gray" 
+}, {  
+    "id": 6,  
+    "title": "Angular 7",  
+    "price": 2000,
+    "releaseDate": "October 18, 2018" ,
+    "color" : "orange" 
+}, {  
+    "id": 7,  
+    "title": "Angular 8",  
+    "price": 1300,
+    "releaseDate": "May 28, 2019" , 
+    "color" : "purple"
+}]  
+} 

@@ -24,14 +24,16 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+import Login from "../pageObject/login";
 
 Cypress.Commands.add("SignIn", () => {
+  const login = new Login();
+
   cy.visit("http://localhost:4200/home");
-  cy.get('form').within(($form) => {
-    cy.get('[data-cy="email"]').type('fake@email.com').should('have.value','fake@email.com');
-    cy.get('[data-cy="password"]').type('123sdergg').should('have.value','123sdergg');
+  cy.get("form").within(($form) => {
+    login.email().type("fake@email.com").should("have.value", "fake@email.com");
+    login.password().type("123sdergg").should("have.value", "123sdergg");
     cy.get('[data-cy="submit"]').click();
-    cy.url()
-    .should("include","accueil")
-  })
+    cy.url().should("include", "accueil");
+  });
 });

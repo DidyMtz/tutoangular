@@ -9,6 +9,7 @@ import { NavComponent } from './nav/nav.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { RegisterComponent } from './register/register.component';
+import { HttpClientModule } from '@angular/common/http';
 
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -20,6 +21,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ContactComponent } from './contact/contact.component';
 import {MatDividerModule} from '@angular/material/divider';
+import { ChartComponent } from './chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -28,12 +30,14 @@ import {MatDividerModule} from '@angular/material/divider';
     NavComponent,
     RegisterComponent,
     AccueilComponent,
-    ContactComponent
+    ContactComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatFormFieldModule,
     FormsModule,
     MatMenuModule,

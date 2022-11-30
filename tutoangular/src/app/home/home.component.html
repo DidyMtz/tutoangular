@@ -11,7 +11,7 @@
         <mat-form-field hintLabel="Min 5 caractères" apparence="fill" class="password">
             <input matInput data-cy="password" type="password" placeholder="Enter password" formControlName="password">
             <!-- <mat-error [ngClass]="{'text-alert  ':messageEmail}" data-cy="messageErrorpassword">{{messagePassword}}</mat-error>-->
-            <mat-error data-cy="messagErrorPassword" *ngIf="loginform.controls['email'].invalid">
+            <mat-error data-cy="messagErrorPassword" *ngIf="loginform.controls['password'].invalid">
                 {{getErrorPasswordMessage()}}</mat-error>
         </mat-form-field>
         <br> <button mat-raised-button color="primary" type="submit" [disabled]="loginform.invalid"

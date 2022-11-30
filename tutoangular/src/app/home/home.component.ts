@@ -41,17 +41,16 @@ export class HomeComponent implements OnInit {
       return 'Vous devez entrer une valeur';
     }
 
-    return this.loginform.controls['email'].hasError('email') ? `Désolé, email incorrecte` : '';
+    return this.loginform.controls['email'].hasError('email') ? `Désolé, email incorrect` : '';
   }
 
   getErrorPasswordMessage() {
     if (this.loginform.controls['password'].hasError('required')) {
       return 'Vous devez entrer une valeur';
     }
-    if (this.loginform.controls['password'].hasError('minLength')) {
-      return `Password trop court`;
-    }
-    return this.loginform.controls['password'].hasError('pattern') ? 'Désolé, caractères non autorisé' : '';
+    
+      return this.loginform.controls['password'].hasError('pattern') ? 'Désolé, password incorrect' : '';
 
+    
   }
 }

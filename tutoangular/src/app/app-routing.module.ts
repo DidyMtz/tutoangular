@@ -1,3 +1,4 @@
+import { ChartComponent } from './chart/chart.component';
 import { RegisterComponent } from './register/register.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { NgModule } from '@angular/core';
@@ -9,6 +10,7 @@ const routes: Routes = [
   { path:'home', component: HomeComponent},
   { path:'register', component: RegisterComponent},
   { path:'accueil', component: AccueilComponent},
+  { path:'chart', component: ChartComponent},
   { path:'**', component: AccueilComponent}
 ];
 
